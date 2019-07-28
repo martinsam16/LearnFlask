@@ -1,0 +1,22 @@
+{% extends 'papa.html' %}
+
+    {% block contenido %}
+        {# Hola soy un comentario #}
+        <h2>Hola {{username}}</h2>
+        {% if is_premium %}
+            <p>Eres Premium!!</p>
+        {% else %}
+            <p>Todo free</p>
+        {% endif %}
+
+        {% if cursos%}
+            <p>Lista cursos</p>
+            <ul>
+                {% for curso in cursos%}
+                    <li>{{curso}}</li>
+                {% endfor%}
+            </ul>
+        {% endif %}
+        <img src="{{url_for('static',filename='images/gato.jpg')}}" alt="">
+
+    {% endblock %}
